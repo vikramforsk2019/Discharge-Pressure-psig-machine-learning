@@ -13,4 +13,7 @@
 # Root Mean Squared Error: 2.45339185851863
 #Poor features: The features we used may not have had a high enough correlation to the values we were trying to predict.
 
-# Part 2: Using Random Forest for Regression
+# Part 2: Using Random Forest for Regression--
+
+# Root Mean Squared Error: 1.3615357736535962 (Random Forest)
+#Mean value is:  186.9910870727262
