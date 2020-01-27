@@ -5,10 +5,10 @@ Created on Sat Jan 25 21:00:04 2020
 
 @author: jagveer
 """
-
+#part 1 using multiple linear regression
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 #Read csv file
 df = pd.read_csv("Expander_data.csv")
 df.info()
@@ -61,17 +61,27 @@ print("Standard Deviation is: ", np.std(lable))
 #Bad assumptions: We made the assumption that this data has a linear relationship, but that might not be the case. Visualizing the data may help you determine that.
 #Poor features: The features we used may not have had a high enough correlation to the values we were trying to predict.
 
+#Root Mean Squared Error: 2.4533918585186387 (LinearRegression)
 
+#Part 2: Using Random Forest for Regression
 
-from sklearn.linear_model import LogisticRegression
-regressor = LogisticRegression()
-regressor.fit(features_train, labels_train)
+from sklearn.ensemble import RandomForestRegressor
 
-labels_pred = regressor.predict(features_test)
+regressor = RandomForestRegressor(n_estimators=25, random_state=0)  
+regressor.fit(features_train, labels_train)  
+labels_pred = regressor.predict(features_test)  
 
+#Evaluating the algorithm
+from sklearn import metrics
 
+print('Mean Absolute Error:', metrics.mean_absolute_error(labels_test, labels_pred))  
+print('Mean Squared Error:', metrics.mean_squared_error(labels_test, labels_pred))  
+print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(labels_test, labels_pred)))  
 
+print(np.mean(lable))
 
+# Root Mean Squared Error: 1.3615357736535962 (Random Forest)
+#Mean value is:  186.9910870727262
 
 
 
