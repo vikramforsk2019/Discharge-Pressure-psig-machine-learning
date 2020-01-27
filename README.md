@@ -9,6 +9,8 @@
 # part 1 using multiple linear regression
 10 % of the mean value of the label is greater than to the RMSE
 #Bad assumptions: We made the assumption that this data has a linear relationship, but that might not be the case. Visualizing the data may help you determine that.
-#Poor features: The features we used may not have had a high enough correlation to the values we were trying to predict.
 
 # Root Mean Squared Error: 2.45339185851863
+#Poor features: The features we used may not have had a high enough correlation to the values we were trying to predict.
+
+# Part 2: Using Random Forest for Regression
